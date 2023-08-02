@@ -10,3 +10,9 @@ fp_3 = Path.cwd()/"profits and loss.csv"
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader) # skip header
+with fp_2.open(mode="r", encoding="UTF-8", newline="") as file:
+    reader = csv.reader(file)
+    next(reader) # skip header
+with fp_3.open(mode="r", encoding="UTF-8", newline="") as file:
+    reader = csv.reader(file)
+    next(reader) # skip header
