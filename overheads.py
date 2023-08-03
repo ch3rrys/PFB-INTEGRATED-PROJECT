@@ -1,16 +1,19 @@
 from pathlib import Path
 import csv
 
-# create a file to csv file.
-fp_2 = Path.cwd()/"csv_reports/overheads.csv"
+def calculate_overheads():
 
-with fp_2.open(mode="r", encoding="UTF-8", newline="") as file:
-    reader = csv.reader(file)
-    next(reader) # skip header
-    
-    overheads=[]
+    # create a file to csv file.
+    fp_2 = Path.cwd()/"csv_reports/overheads.csv"
 
-    for row in reader:
-        overheads.append([row[0],row[1]])  
+    with fp_2.open(mode="r", encoding="UTF-8", newline="") as file:
+        reader = csv.reader(file)
+        next(reader) # skip header
+        
+        overheads=[]
 
-    print(overheads)
+        for row in reader:
+            overheads.append([row[0],row[1]])  
+
+        return overheads
+print(calculate_overheads())
