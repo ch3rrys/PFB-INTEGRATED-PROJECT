@@ -2,9 +2,9 @@ from pathlib import Path
 import csv
 
 # create a file to csv file.
-fp = Path.cwd()/"cash-on-hand.csv"
-fp_2 = Path.cwd()/"overheads-day-90.csv"
-fp_3 = Path.cwd()/"profit-and-loss-usd day 1 to day 90.csv"
+fp = Path.cwd()/"cash_on_hand.csv"
+fp_2 = Path.cwd()/"overheads.csv"
+fp_3 = Path.cwd()/"profits_and_loss.csv"
 
 # read the csv file to append profit and quantity from the csv.
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
@@ -36,6 +36,6 @@ with fp_3.open(mode="r", encoding="UTF-8", newline="") as file:
     profit_n_loss=[]
 
     for row in reader:
-        profit_n_loss.append([row[0],row[1]])  
+        profit_n_loss.append([row[0],row[1],row[2],row[3],row[4]])  
 
     print(profit_n_loss)
