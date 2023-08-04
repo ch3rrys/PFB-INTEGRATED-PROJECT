@@ -26,5 +26,6 @@ for category, value in overheads_data:
             highest_value = value 
             highest_category = category
 
+cap_highest_category = highest_category.upper()
 
-
+print(f'[HIGHEST OVERHEAD] {cap_highest_category}:{highest_value:.2f}')
