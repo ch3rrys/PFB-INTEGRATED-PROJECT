@@ -9,11 +9,22 @@ def calculate_overheads():
     with fp_2.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader) # skip header
-        
+            
         overheads=[]
 
         for row in reader:
-            overheads.append([row[0],row[1]])  
-
+            overheads.append([row[0],float(row[1])])  
+        
         return overheads
-print(calculate_overheads())
+
+overheads_data = calculate_overheads()
+highest_category = ""
+highest_value = 0.00
+
+for category, value in overheads_data:
+        if value > highest_value:
+            highest_value = value 
+            highest_category = category
+
+
+
