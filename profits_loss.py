@@ -23,24 +23,13 @@ for i in range(1, len(net_profit_data)):
     # Calculate the difference in net profit between the current and previous day
     difference = net_profit_data[i][1] - net_profit_data[i - 1][1]
 
-# Iterate through each list object to compare differences in net profit
-for i in range(1, len(net_profit_data)):
-    # Calculate the difference in net profit between the current and previous day
-    difference = net_profit_data[i][1] - net_profit_data[i - 1][1]
-    
-    # Append the difference to the list
-    profit_differences.append([net_profit_data[i][0], difference])
+# Only consider cash deficit (negative difference)
+    if difference < 0:
+        cash_deficits.append([net_profit_data[i][0], difference])
 
-    # Check if the difference is higher than the highest increment
-    if difference > highest_increment_amount:
-        highest_increment_day = net_profit_data[i][0]
-        highest_increment_amount = difference
-
-# Print results; if highest increment day is None, net profit is always increasing
-if highest_increment_day is None:
-    print("[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-    print(f"[HIGHEST INCREMENT] DAY: {highest_increment_day}, AMOUNT: USD{highest_increment_amount}")
-
+# Print cash deficit results
+if cash_deficits:
+    for deficit in cash_deficits:
+        print(f"[CASH DEFICIT] DAY: {deficit[0]}, AMOUNT: USD{deficit[1]}")
 else:
-    for diff in profit_differences:
-        print(f"[CASH DEFICIT] DAY: {diff[0]}, AMOUNT: USD{diff[1]}")
+    print("No cash deficits found.")
