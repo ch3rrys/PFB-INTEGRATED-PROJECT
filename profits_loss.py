@@ -18,9 +18,10 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 # Initialize a list to store the cash deficit values
 cash_deficits = []
 
-# Initialize variables to keep track of the highest increment
-highest_increment_day = None
-highest_increment_amount = 0
+# Iterate through each list object to find cash deficit values (negative differences)
+for i in range(1, len(net_profit_data)):
+    # Calculate the difference in net profit between the current and previous day
+    difference = net_profit_data[i][1] - net_profit_data[i - 1][1]
 
 # Iterate through each list object to compare differences in net profit
 for i in range(1, len(net_profit_data)):
