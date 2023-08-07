@@ -15,8 +15,8 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     for row in reader:
         net_profit_data.append([int(row[0]), int(row[4])])
 
-# Initialize a list to store the differences in net profit
-profit_differences = []
+# Initialize a list to store the cash deficit values
+cash_deficits = []
 
 # Initialize variables to keep track of the highest increment
 highest_increment_day = None
