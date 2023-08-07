@@ -34,3 +34,11 @@ for i in range(1, len(cash_on_hand)):
     else:
         #append deficit to deficit list
         cash_deficit.append([cash_on_hand[i][0], cash_on_hand[i][1]])
+
+#print results; if deficit list is empty (no deficit) we print cash surplus
+if not cash_deficit:
+    print("[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+    print(f"[HIGHEST CASH SURPLUS] DAY: {highest_surplus[0]}, AMOUNT: USD{highest_surplus[1]}")
+else:
+    for deficit in cash_deficit:
+         print(f"[CASH DEFICIT] DAY: {deficit[0]}, AMOUNT: USD{deficit[1]}")
