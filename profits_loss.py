@@ -29,3 +29,9 @@ for i in range(1, len(net_profit_data)):
     
     # Append the difference to the list
     profit_differences.append([net_profit_data[i][0], difference])
+
+     # Check if the difference is higher than the highest increment
+    if difference > highest_increment_amount:
+        highest_increment_day = net_profit_data[i][0]
+        highest_increment_amount = difference
+
