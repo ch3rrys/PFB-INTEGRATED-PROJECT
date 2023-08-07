@@ -35,3 +35,11 @@ for i in range(1, len(net_profit_data)):
         highest_increment_day = net_profit_data[i][0]
         highest_increment_amount = difference
 
+# Print results; if highest increment day is None, net profit is always increasing
+if highest_increment_day is None:
+    print("[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+    print(f"[HIGHEST INCREMENT] DAY: {highest_increment_day}, AMOUNT: USD{highest_increment_amount}")
+
+else:
+    for diff in profit_differences:
+        print(f"[CASH DEFICIT] DAY: {diff[0]}, AMOUNT: USD{diff[1]}")
