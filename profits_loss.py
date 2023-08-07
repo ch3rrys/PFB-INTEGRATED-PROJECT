@@ -31,7 +31,7 @@ for i in range(1, len(net_profit_data)):
 
 # Only consider cash deficit (negative difference)
     if difference < 0:
-        cash_deficits.append([net_profit_data[i][0], difference])
+        cash_deficits.append([net_profit_data[i][0], abs(difference)])
 
 # Print cash deficit results
 #print results; if deficit list is empty (no deficit) we print cash surplus
@@ -41,8 +41,3 @@ if not cash_deficits:
 else:
     for deficit in cash_deficits:
          print(f"[CASH DEFICIT] DAY: {deficit[0]}, AMOUNT: USD{deficit[1]}")
-if cash_deficits:
-    for deficit in cash_deficits:
-        print(f"[CASH DEFICIT] DAY: {deficit[0]}, AMOUNT: USD{deficit[1]}")
-else:
-    print("No cash deficits found.")
