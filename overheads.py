@@ -14,18 +14,16 @@ def calculate_overheads():
 
         for row in reader:
             overheads.append([row[0],float(row[1])])  
-        
-        return overheads
+ 
+    highest_category = ""
+    highest_value = 0.00
 
-overheads_data = calculate_overheads()
-highest_category = ""
-highest_value = 0.00
+    for category, value in overheads:
+            if value > highest_value:
+                highest_value = value 
+                highest_category = category
 
-for category, value in overheads_data:
-        if value > highest_value:
-            highest_value = value 
-            highest_category = category
+    cap_highest_category = highest_category.upper()
 
-cap_highest_category = highest_category.upper()
-
-print(f'[HIGHEST OVERHEAD] {cap_highest_category}:{highest_value:.2f}')
+    output = f'[HIGHEST OVERHEAD] {cap_highest_category}:{highest_value:.2f}\n'
+    return output
