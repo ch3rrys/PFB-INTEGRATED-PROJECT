@@ -14,13 +14,13 @@ def calculate_overheads():
         reader = csv.reader(file)
         next(reader) # skip header
 
-        # initialize list to store all the values of overheads    
+        # initialise list to store all the values of overheads    
         overheads = []
 
         for row in reader:
             overheads.append([row[0],float(row[1])])
 
-    # initialize variables to track the highest overhead category and value
+    # initialise variables to track the highest overhead category and value
     highest_category = ""
     highest_value = 0.00
 
@@ -30,7 +30,7 @@ def calculate_overheads():
                 highest_value = value 
                 highest_category = category
 
-    # capitalize the highest category for formatting
+    # capitalise the highest category for formatting
     cap_highest_category = highest_category.upper()
     
     # format the output string with the highest category and value
