@@ -25,5 +25,5 @@ def calculate_overheads():
 
     cap_highest_category = highest_category.upper()
 
-    output = f'[HIGHEST OVERHEAD] {cap_highest_category}:{highest_value:.2f}\n'
+    output = f'[HIGHEST OVERHEAD] {cap_highest_category}: USD{highest_value:.2f}\n'
     return output
