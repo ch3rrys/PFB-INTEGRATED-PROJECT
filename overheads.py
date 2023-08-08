@@ -9,13 +9,13 @@ def calculate_overheads():
     # create a file to csv file
     fp = Path.cwd()/"csv_reports/overheads.csv"
 
+    # initialise list to store all the values of overheads    
+    overheads = []
+
     # read the csv file to append profit and quantity from the csv
     with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader) # skip header
-
-        # initialise list to store all the values of overheads    
-        overheads = []
 
         for row in reader:
             overheads.append([row[0],float(row[1])])
@@ -34,5 +34,5 @@ def calculate_overheads():
     cap_highest_category = highest_category.upper()
     
     # format the output string with the highest category and value
-    output = f'[HIGHEST OVERHEAD] {cap_highest_category}: USD{highest_value:.2f}\n'
+    output = f'[HIGHEST OVERHEAD] {cap_highest_category}: {highest_value:.2f}%\n'
     return output
