@@ -2,7 +2,10 @@ from pathlib import Path
 import csv
 
 def calculate_overheads():
-
+    '''
+    function reads overhead data from CSV file and identifies the category with the highest value.
+    required parameters : none
+    '''
     # create a file to csv file.
     fp_2 = Path.cwd()/"csv_reports/overheads.csv"
 
@@ -10,7 +13,7 @@ def calculate_overheads():
         reader = csv.reader(file)
         next(reader) # skip header
             
-        overheads=[]
+        overheads = []
 
         for row in reader:
             overheads.append([row[0],float(row[1])])  
