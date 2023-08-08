@@ -6,7 +6,7 @@ def calculate_cash_on_hand():
     function reads cash flow data from CSV file and analyses it to identify cash surpluses and deficits on different days.
     required parameters : none
     '''
-    # create a file to csv file.
+    # create a file to csv file
     fp = Path.cwd()/"csv_reports/cash_on_hand.csv"
 
     # initialise list to store all the values of cash on hand

@@ -6,11 +6,11 @@ def calculate_overheads():
     function reads overhead data from CSV file and identifies the category with the highest value.
     required parameters : none
     '''
-    # create a file to csv file.
-    fp_2 = Path.cwd()/"csv_reports/overheads.csv"
+    # create a file to csv file
+    fp = Path.cwd()/"csv_reports/overheads.csv"
 
-    # read the csv file to append profit and quantity from the csv.
-    with fp_2.open(mode="r", encoding="UTF-8", newline="") as file:
+    # read the csv file to append profit and quantity from the csv
+    with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader) # skip header
 
