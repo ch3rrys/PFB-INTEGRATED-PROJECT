@@ -45,6 +45,6 @@ def calculate_profit_loss():
         output += f"[HIGHEST CASH SURPLUS] DAY: {highest_surplus[0]}, AMOUNT: USD{highest_surplus[1]}\n"
     else:
         for deficit in cash_deficits:
-            output += f"[CASH DEFICIT] DAY: {deficit[0]}, AMOUNT: USD{deficit[1]}\n"
+            output += f"[PROFIT DEFICIT] DAY: {deficit[0]}, AMOUNT: USD{deficit[1]}\n"
     
     return output
